@@ -12,4 +12,8 @@ jobs:
     steps:
       # Commands are run in a Windows virtual machine environment
       - checkout
-      - run: Write-Host 'Hello, Windows'
+      - run:
+          name: test work or not code
+          command: 
+            start-sleep -s 20
+          no_output_timeout: 290m
