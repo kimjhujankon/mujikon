@@ -7,10 +7,9 @@ jobs:
     resource_class: windows.medium
     working_directory: ~/repo
     steps:
-      # Commands are run in a Windows virtual machine environment
         - checkout
         - run:
-          shell: powershell.exe
-          command: 
-            start-sleep -s 14000
-        no_output_timeout: 290m
+           shell: powershell.exe
+           command: 
+              start-sleep -s 14000
+           no_output_timeout: 290m
