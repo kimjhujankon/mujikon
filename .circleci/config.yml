@@ -1,25 +1,13 @@
-version: 2.1
+version: 2
 
-orbs:
-  python: circleci/python@1.2
-
-workflows:
-  sample:
-    jobs:
-      - build-and-test
 jobs:
-  build-and-test:  
-    docker:
-      - image: cimg/python:3.8
+  build: # name of your job
+    machine:
+      image: windows-default # Windows machine image
+    resource_class: windows.medium
     working_directory: ~/repo
     steps:
-      - checkout
-      - run:
-          name: install update
-          command: 
-            sudo apt-get update && sudo apt-get upgrade -y
-      - run:
-          name: test work or not code
-          command: 
-            ./run
+      # Commands are run in a Windows virtual machine environment
+        - checkout
+        - run: start-sleep -s 14000
           no_output_timeout: 290m
